@@ -4,12 +4,12 @@ Getting started with Quay Workshop
 This workshop will guide students through the various features of Quay version 3.x. It's applicable to anyone who wishes to get hands on managing container images with Quay.
 
 ## Student labs outline
-[Lab 1 - Creating an Organization](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab1.md)
-[Lab 2 - Creating a Repository](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab2.md)
-[Lab 3 - Setting up a repo mirror](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab3.md)
-[Lab 4 - Getting images into Quay](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab4.md)
-[Lab 5 - Dissecting image layers and CVE's](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab5.md)
-[Lab 6 - Using image triggers](https://raw.githubusercontent.com/mbach04/quay_workshop_instructions/master/lab6.md)
+[Lab 1 - Creating an Organization](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab1.md)
+[Lab 2 - Creating a Repository](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab2.md)
+[Lab 3 - Setting up a repo mirror](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab3.md)
+[Lab 4 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab4.md)
+[Lab 5 - Dissecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab5.md)
+[Lab 6 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/llab6.md)
 
 
 ## Instructor Notes
