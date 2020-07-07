@@ -47,14 +47,14 @@ When a repository is set to be a mirror, you cannot `push` an image directly to 
 | Field  | Value  |
 |---|---|
 | Registry Location  | docker.io/library/centos  |
-| Tags  | 7.7.1908. 8.*  |
+| Tags  | 7.7.1908, 8.*  |
 | Start Date  | (set to today / now)  |
 | Sync Interval  | 1 minutes  |
 | Robot User  | `user1org+user1robot`  |
 | Verify TLS  | (checked)  |
 
 * Click `Enable Mirror`
-* Notice in the `Tags` field, we entered one explicit match `7.7.1908` and one regex match `8.*`. You can use this mechanism to sync tags based on string matching criteria. In the case of our wildcard tag, this will pull down all Centos images that have a tag that begins with `8.`.
+* Notice in the `Tags` field, we entered one explicit match `7.7.1908` and one regex match `7.*`. You can use this mechanism to sync tags based on string matching criteria. In the case of our wildcard tag, this will pull down all Centos images that have a tag that begins with `8.`. This tag matching may result in several images being mirrored into your `centos-mirror` repo.
 * Notice the message that appeared at the top of the Repository Mirroring configuration page, along with a `Status` section at the bottom: 
 
 ```

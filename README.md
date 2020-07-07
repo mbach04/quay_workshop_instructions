@@ -12,7 +12,7 @@ Your instructor should assign you a user number. Several of the lab exercises in
 
 [Lab 3 - Inspecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
 
-[Lab 4 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
+[Lab 4 - Notifications](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
 
 [Lab 5 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
 
