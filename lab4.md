@@ -60,3 +60,7 @@ Within 60 seconds or so, you should see a list of `POST` actions begin to popula
 Example POST received on the webhook site:
 
 ![Webhook.site](/images/webhook-site.png)
+
+
+## Next Lab:
+[Previous](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md) | [Next](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)

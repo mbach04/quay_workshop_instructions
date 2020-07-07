@@ -14,9 +14,8 @@ Your instructor should assign you a user number. Several of the lab exercises in
 
 [Lab 4 - Notifications](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
 
-[Lab 5 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
+[Lab 5 - Working with images](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
 
-TODO: enc password stuff
 ___
 
 ## Instructor Notes
