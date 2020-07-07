@@ -3,19 +3,20 @@ Getting started with Quay Workshop
 
 This workshop will guide students through the various features of Quay version 3.x. It's applicable to anyone who wishes to get hands on managing container images with Quay.
 
+Your instructor should assign you a user number. Several of the lab exercises in this workshop will require you to insert your user number to perform an operation. For example, the lab guide may ask you to enter your username and state `userX` as the example. If you are user number `1`, you would change this value to `user1` instead of `userX`.
+
 ## Student labs outline
-[Lab 1 - Creating an Organization](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab1.md)
+[Lab 1 - Organizations and Repositories](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab1.md)
 
-[Lab 2 - Creating a Repository](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab2.md)
+[Lab 2 - Repo mirroring](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
 
-[Lab 3 - Setting up a repo mirror](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
+[Lab 3 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
 
-[Lab 4 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
+[Lab 4 - Dissecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
 
-[Lab 5 - Dissecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
+[Lab 5 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
 
-[Lab 6 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
-
+___
 
 ## Instructor Notes
 This workshop can be run on any OpenShift 4.x cluster with Quay 3.x deployed. It can also be done on a Quay instance deployed in HA on virtual machines, although the preferred architecture is Quay on OCP 4.x. You can deploy on top of a vanilla OCP 4.x cluster in RHPDS using the DevSecOps Workshop Deployer found here: [openshift-devsecops](https://github.com/jharmison-redhat/openshift-devsecops).
