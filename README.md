@@ -10,12 +10,13 @@ Your instructor should assign you a user number. Several of the lab exercises in
 
 [Lab 2 - Repo mirroring](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
 
-[Lab 3 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
+[Lab 3 - Inspecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
 
-[Lab 4 - Dissecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
+[Lab 4 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
 
-[Lab 5 - Using image triggers](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
+[Lab 5 - Getting images into Quay](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
 
+TODO: enc password stuff
 ___
 
 ## Instructor Notes
@@ -23,4 +24,4 @@ This workshop can be run on any OpenShift 4.x cluster with Quay 3.x deployed. It
 
 In order to complete all labs of this workshop, ensure your Quay instance has repo-mirroring enabled. If deploying using the [openshift-devsecops](https://github.com/jharmison-redhat/openshift-devsecops) repo, you'll need to set `enable_quay_repo_mirroring: yes` in the `devsecops.yml` variable file. Repo-mirroring requires a `rwx` storage provider as well.
 
-Students will need a means to push / pull container images as well. This can be done by hosting a RHEL8 instance and allowing students to SSH in. Or, if using the openshift-devsecops workshop deployer, you can use the butterfly project to give students a browser based SSH terminal, thus reducing student workstation requirements to Chrome or Firefox.
+Optionally, students will need a means to push / pull container images in order to complete the lab "Getting images into Quay". This can be done by hosting a RHEL8 instance and allowing students to SSH in. Or, if using the openshift-devsecops workshop deployer, you can use the butterfly project to give students a browser based SSH terminal, thus reducing student workstation requirements to Chrome or Firefox.

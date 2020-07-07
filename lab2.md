@@ -1,4 +1,4 @@
-# Repo Mirroring
+# Lab 2 - Repo Mirroring
 In this lab, we'll create a repository that automatically mirrors images located somewhere else. Quay can mirror images from any container registry it can reach and has appropriate credentials to. This is useful in a number of scenarios:
 * caching local copies of baselayer images to reduce network traffic on your WAN link
 * making a subset of images available to your developer team to choose from (discouraging grabbing random images from the internet)
@@ -32,31 +32,46 @@ When a repository is set to be a mirror, you cannot `push` an image directly to 
 * Click the `Mirroring` icon as shown above
 * You should now see the `Repository Mirroring` configuration page.
 * Beside the `Robot User` field, select the down arrow and click `Create robot accounts`. We'll need this to enable mirroring even if the remote registry does not require auth (ie docker.io).
-* Fill out the corresponding sections with the values provided below:
+### Fill out the corresponding sections with the values provided below:
+
 | Field  | Value  |
 |---|---|
 | Provide a name for your new robot account  | `userXrobot`  |
 | Provide an optional description for your new robot account:  | `centos mirror bot`  |
+
 * Click `Create robot account`
 ![Mirroring](/images/create-robot-account.png)
 
-* Fill out the corresponding sections with the values provided below:
+### Fill out the corresponding sections with the values provided below:
 
 | Field  | Value  |
 |---|---|
 | Registry Location  | docker.io/library/centos  |
-| Tags  | 7.7.1908  |
+| Tags  | 7.7.1908. 8.*  |
 | Start Date  | (set to today / now)  |
 | Sync Interval  | 1 minutes  |
+| Robot User  | `user1org+user1robot`  |
 | Verify TLS  | (checked)  |
 
+* Click `Enable Mirror`
+* Notice in the `Tags` field, we entered one explicit match `7.7.1908` and one regex match `8.*`. You can use this mechanism to sync tags based on string matching criteria. In the case of our wildcard tag, this will pull down all Centos images that have a tag that begins with `8.`.
+* Notice the message that appeared at the top of the Repository Mirroring configuration page, along with a `Status` section at the bottom: 
 
+```
+This repository is configured as a mirror. While enabled, Quay will periodically replicate any matching images on the external registry. Users cannot manually push to this repository.
+```
 
-
+## Check that your mirror is working
 
 * Navigate back to the dashboard by clicking the `RED HAT QUAY` icon in the top left of the page.
-* Notice you now have two organizations, `userX` and `userXorg`. Your `userXorg` organization contains one repository named `test`.
+* Notice your new repo under the `userXorg` named `centos-mirror`.
+* Click `centos-mirror`
 
+You're now presented with the dashboard for the `centos-mirror` repository. A few things to note here:
+* There's no `Repository Activity` because images are not `pushed` to this repo in a traditional sense.
+* Quay has a helpful image pulling command syntax generator in the top right. You can copy this command directly to the clipboard, paste it into a host with docker / podman / skopeo, and use it to pull your mirrored image.
+
+Take a moment to click around this repo to see `Tags`, `Tag History`, and `Usage Logs`.
 
 
 ## Next Lab:

@@ -1,4 +1,4 @@
-# Organizations
+# Lab 1 - Organizations
 
 ## Login to Quay
 From a web browser (Chrome / Firefox), Navigate to the Quay URL provided by your instructor.
