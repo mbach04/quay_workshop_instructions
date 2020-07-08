@@ -54,7 +54,9 @@ When a repository is set to be a mirror, you cannot `push` an image directly to 
 | Verify TLS  | (checked)  |
 
 * Click `Enable Mirror`
-* Notice in the `Tags` field, we entered one explicit match `7.7.1908` and one regex match `7.*`. You can use this mechanism to sync tags based on string matching criteria. In the case of our wildcard tag, this will pull down all Centos images that have a tag that begins with `8.`. This tag matching may result in several images being mirrored into your `centos-mirror` repo.
+* Notice in the `Tags` field, we entered one explicit match `7.7.1908` and one regex match `7.*`. You can use this mechanism to sync tags based on string matching criteria. In the case of our wildcard tag, this will pull down all Centos images that have a tag that begins with `8.`. This tag matching may result in several images being mirrored into your `centos-mirror` repo. A table of pattern syntax examples are available here: [Tag Patterns](https://github.com/mbach04/quay_workshop_instructions/blob/master/tagpatterns.md)
+
+
 * Notice the message that appeared at the top of the Repository Mirroring configuration page, along with a `Status` section at the bottom: 
 
 ```

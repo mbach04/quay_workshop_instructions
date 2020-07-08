@@ -1,5 +1,5 @@
 # quay_workshop_instructions
-Getting started with Quay Workshop
+Getting started with Quay
 
 This workshop will guide students through the various features of Quay version 3.x. It's applicable to anyone who wishes to get hands on managing container images with Quay.
 
