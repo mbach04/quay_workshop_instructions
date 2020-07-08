@@ -7,7 +7,7 @@
 | [seq]  | Matches any character in *seq* |
 | [!seq] | Matches any character not in *seq* |
 
-Example tag patterns
+## Examples
 | Example Pattern  | Example Matches  |
 |---|---|
 | v3*  |  v32, v3.1, v3.2, v3.2-4beta, v3.3 |
