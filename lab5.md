@@ -65,7 +65,59 @@ docker tag quay.apps.cluster-c2bmc-1d4d.c2bmc-1d4d.example.opentlc.com/user1org/
 ```
 
 ### Login to Quay with your container CLI
-TODO
+
+In order to push images into an image repository hosted on Quay, you must be authenticated as a user who has `Write` or `Admin` permissions to your target repo. You can verify what permissions a given user has in the settings tab of a given repository.
+
+To login, you can use any standard image management client: IE Podman, Skopeo, docker.
+
+Because the instance of Quay being used in this lab is temporary, we've used a self-signed TLS cert to secure the end point. By default, these are not trusted by image management tools. In order to login or push an image, you'll normall have to explicitly tell your tooling that you trust this registry.
+
+Last note, rather than have you type your password into a terminal that is capturing your command history, Quay can generate a temporary encrypted version of your password that's time boxed and safer to use rather than a clear text version. We'll be using this to login to Quay in the steps below.
+
+* From the Red Hat Quay dashboard, click your username dropdown in the top right of the UI, and select `Account Settings`.
+* Click the gear icon on the left for the settings page.
+* Under `Docker CLI Password`, click `Generate Encrypted Password`
+* Enter your password `openshift`
+* Click `Docker Login` on the left
+* Copy the command shown to the clipboard
+* Paste this command in your terminal
+
+`If you're using podman:`
+* Replace the word `docker` with `podman`
+* Append the flag `--tls-verify=false` to tell Podman that we trust this registry
+* You should see a `Login Succeeded!` message, you're not authenticated to Quay and your credentials are cached for further registry interactions.
+
+`If you're using docker on Linux`
+* You'll need to edit the /etc/docker/daemon.json file to include the `insecure-registries` key, with the value being set to the Quay instance used in the lab (requires sudo privilege). 
+
+Example daemon.json:
+
+```
+{
+"insecure-registries": [
+    "quay.apps.example.opentlc.com"
+    ]
+}
+```
+
+
+
+`If you're using Docker on Mac / Windows`
+* In your Docker desktop preferences or settings, you'll need to add the hostname of Quay to your allowed insecure-registries list, under the `Docker Engine` settings, defined in the configuration file. An example of this configuration is shown below:
+
+```
+{
+  "experimental": false,
+  "debug": true,
+  "insecure-registries": [
+    "quay.apps.example.opentlc.com"
+  ]
+}
+
+```
+* After updating your config file, press `Apply and Restart`
+* Run the `docker login` command provided from the Quay UI described in the steps above.
+
 ### Push the image
 * From your terminal, copy the command below and replace <destination> with the FQDN of your destination image from above before pressing enter.
 
