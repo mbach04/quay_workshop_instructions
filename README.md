@@ -8,13 +8,13 @@ Your instructor should assign you a user number. Several of the lab exercises in
 ## Student labs outline
 [Lab 1 - Organizations and Repositories](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab1.md)
 
-[Lab 2 - Repo mirroring](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
+[Lab 2 - Repo mirroring](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab2.md)
 
-[Lab 3 - Inspecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
+[Lab 3 - Inspecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
 
-[Lab 4 - Notifications](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
+[Lab 4 - Notifications](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
 
-[Lab 5 - Working with images](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab6.md)
+[Lab 5 - Working with images](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
 
 ___
 
