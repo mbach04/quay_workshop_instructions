@@ -2,7 +2,7 @@
 
 read -p "Please enter your email address: " email
 read -p "Please enter desired username: " username
-read -sp "Please enter desired password: " password
+read -sp "Please enter desired password (at least 8 characters and 1 number): " password
 oc create secret generic redhat-pull-secret \
   --from-file=".dockerconfigjson=config.json" \
   --type='kubernetes.io/dockerconfigjson'
