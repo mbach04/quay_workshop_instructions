@@ -1,4 +1,4 @@
-# quay_workshop_instructions
+# Quay Workshop Instructions
 Getting started with Quay
 
 This workshop will guide students through the various features of Quay version 3.x. It's applicable to anyone who wishes to get hands on managing container images with Quay.
@@ -23,4 +23,14 @@ This workshop can be run on any OpenShift 4.x cluster with Quay 3.x deployed. It
 
 In order to complete all labs of this workshop, ensure your Quay instance has repo-mirroring enabled. If deploying using the [openshift-devsecops](https://github.com/jharmison-redhat/openshift-devsecops) repo, you'll need to set `enable_quay_repo_mirroring: yes` in the `devsecops.yml` variable file. Repo-mirroring requires a `rwx` storage provider as well.
 
-Optionally, students will need a means to push / pull container images in order to complete the lab "Getting images into Quay". This can be done by hosting a RHEL8 instance and allowing students to SSH in. Or, if using the openshift-devsecops workshop deployer, you can use the butterfly project to give students a browser based SSH terminal, thus reducing student workstation requirements to Chrome or Firefox.
+Optionally, students will need a means to push / pull container images in order to complete the lab "Getting images into Quay". This can be done by hosting a RHEL8 instance and allowing students to SSH in. Or, if using the openshift-devsecops workshop deployer, you can use the butterfly project to give students a browser based SSH terminal, thus reducing student workstation requirements to Chrome or Firefox. 
+
+## If you already have an existing Openshift 4 Cluster
+
+If you are running an existing Openshift 4 cluster and would like to run the quay workshop there. Please navigate to the "Operators" tab under the Administrator's view. 
+
+* Click on OperatorHub
+
+* Search for "Red Hat Quay" & install
+
+Once installed navigate back to your terminal screen and run `install-script`
