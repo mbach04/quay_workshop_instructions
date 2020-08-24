@@ -9,7 +9,6 @@ spec:
     superuserCredentialsSecretName: quay-super-user
     configSecretName: quay-config-app
     configHostname: quay-config.apps.ocp.mybachsbrain.com
-#    hostname: quay.apps.ocp.mybachsbrain.com
     deploymentStrategy: RollingUpdate
     skipSetup: false
     registryStorage:
