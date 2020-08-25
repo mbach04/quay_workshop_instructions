@@ -20,5 +20,5 @@ oc create secret generic quay-config-app \
   --from-literal=config-app-password="$password"
 oc create secret generic quay-redis-password \
   --from-literal=password="$password"
-sleep 30
+sleep 5
 oc create -f advanced_config_example.yaml 
