@@ -3,6 +3,7 @@
 read -p "Please enter your email address: " email
 read -p "Please enter desired username: " username
 read -sp "Please enter desired password (at least 8 characters and 1 number): " password
+printf '\n-------------------\n'
 oc create secret generic redhat-pull-secret \
   --from-file=".dockerconfigjson=config.json" \
   --type='kubernetes.io/dockerconfigjson'
@@ -19,5 +20,5 @@ oc create secret generic quay-config-app \
   --from-literal=config-app-password="$password"
 oc create secret generic quay-redis-password \
   --from-literal=password="$password"
-sleep 30
+sleep 5
 oc create -f advanced_config_example.yaml 

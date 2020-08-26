@@ -33,4 +33,20 @@ If you are running an existing Openshift 4 cluster and would like to run the qua
 
 * Search for "Red Hat Quay" & install
 
-Once installed navigate back to your terminal screen and run `install-script`
+Once installed navigate back to your terminal screen and locate or create the `.dockercfg` file by doing one of the three following steps
+
+* If you already have a `.dockercfg` file for the secured registry, you can `cp <path/to/.dockercfg> config.json`
+
+* Or if you have a $HOME/.docker/config.json file, you can `cp <path/to/.docker/config.json> config.json`
+
+* If you do not already have a Docker credentials file for the secured registry, you can create a secret by running the following
+ 
+```
+$ oc create secret docker-registry <pull_secret_name> \
+    --docker-server=<registry_server> \
+    --docker-username=<user_name> \
+    --docker-password=<password> \
+    --docker-email=<email>     
+```
+
+Finally run the `install-script`
