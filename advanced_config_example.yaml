@@ -8,27 +8,10 @@ spec:
     imagePullSecretName: redhat-pull-secret
     superuserCredentialsSecretName: quay-super-user
     configSecretName: quay-config-app
-    configHostname: quay-config.apps.ocp.mybachsbrain.com
-    deploymentStrategy: RollingUpdate
-    skipSetup: false
-    registryStorage:
-      persistentVolumeAccessModes:
-        - ReadWriteOnce
-      persistentVolumeSize: 10Gi
-      persistentVolumeStorageClassName: gp2 
-    database:
-      volumeSize: 10Gi
-      credentialsSecretName: quay-database-credential
-    resources:
-      requests:
-        memory: 1000Mi
-    envVars:
-      - name: DEBUGLOG
-        value: "true"
-  redis:
-    credentialsSecretName: quay-redis-password
-    imagePullSecretName: redhat-pull-secret
   clair:
     enabled: true
     imagePullSecretName: redhat-pull-secret
     updateInterval: "60m"
+  redis:
+    credentialsSecretName: quay-redis-password
+    imagePullSecretName: redhat-pull-secret
