@@ -1,7 +1,11 @@
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: QuayEcosystem
 metadata:
+<<<<<<< HEAD
   name: quayecosystem-user2
+=======
+  name: quayecosystem
+>>>>>>> 8f7797c942b2732eccf08a4022ab7f87d226d0e3
 spec:
   quay:
     enableRepoMirroring: true
