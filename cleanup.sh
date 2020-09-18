@@ -2,7 +2,7 @@
 
 #!/bin/bash
 
-for i in 18
+for i in {1..15}
 do 
 oc project user$i
 cat <<EOF | oc delete -f -

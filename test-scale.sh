@@ -1,18 +1,19 @@
 #!/bin/bash
 
-for i in {1..15}
+for i in {3..4}
 do
 #Install the Quay Operator
+oc new-project user$i
 cat <<EOF | oc apply -f -
 # Base namespace for creation of operator
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    openshift.io/cluster-monitoring: "true"
-  name: user$i
-spec: {}
+# ---
+# apiVersion: v1
+# kind: Namespace
+# metadata:
+#   labels:
+#     openshift.io/cluster-monitoring: "true"
+#   name: user$i
+# spec: {}
 # OperatorGroup for OLM configuration
 ---
 apiVersion: operators.coreos.com/v1
@@ -46,11 +47,10 @@ metadata:
 type: kubernetes.io/dockerconfigjson
 data:
   .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJxdWF5LmlvIjogewogICAgICAiYXV0aCI6ICJjbVZrYUdGMEszRjFZWGs2VHpneFYxTklVbE5LVWpFMFZVRmFRa3MxTkVkUlNFcFRNRkF4VmpSRFRGZEJTbFl4V0RKRE5GTkVOMHRQTlRsRFVUbE9NMUpGTVRJMk1USllWVEZJVWc9PSIsCiAgICAgICJlbWFpbCI6ICIiCiAgICB9CiAgfQp9
-
 EOF
 
-oc project user$i
-
+# oc project user$i
+sleep 5
 #Create secrets for quay, redis, postgres
 cat <<EOF | oc apply -f -
 # Secret to change default password for super-user
@@ -96,6 +96,7 @@ type: Opaque
 stringData:
   password: openshift
 EOF
+sleep 45
 #Launch an instance of Quay
 cat <<EOF | oc apply -f -
 apiVersion: redhatcop.redhat.io/v1alpha1
