@@ -5,7 +5,6 @@ read -p "Please enter desired username: " username
 read -sp "Please enter desired password (at least 8 characters and 1 number): " password
 printf '\n-------------------\n'
 #oc new-project quay-ecosystem
-oc project user2
 oc create secret generic redhat-pull-secret \
   --from-file=".dockerconfigjson=$XDG_RUNTIME_DIR/containers/auth.json" \
   --type='kubernetes.io/dockerconfigjson'
