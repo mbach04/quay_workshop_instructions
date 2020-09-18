@@ -1,11 +1,10 @@
 #!/bin/bash
 
-i=20
- 
-#oc new-project user$i
 for i in {1..15}
 do
+#Install the Quay Operator
 cat <<EOF | oc apply -f -
+# Base namespace for creation of operator
 ---
 apiVersion: v1
 kind: Namespace
@@ -14,6 +13,7 @@ metadata:
     openshift.io/cluster-monitoring: "true"
   name: user$i
 spec: {}
+# OperatorGroup for OLM configuration
 ---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
@@ -23,6 +23,7 @@ metadata:
 spec:
   targetNamespaces:
   - user$i
+# Subscription to trigger OLM installation
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -35,38 +36,85 @@ spec:
   name: quay-operator
   source: redhat-operators
   sourceNamespace: openshift-marketplace
-EOF
-#Create secrets for quay etc
-oc project user$i
-oc create secret generic redhat-pull-secret \
-  --from-file=".dockerconfigjson=$XDG_RUNTIME_DIR/containers/auth.json" \
-  --type='kubernetes.io/dockerconfigjson'
-oc create secret generic quay-database-credential \
-  --from-literal=database-username="mbach" \
-  --from-literal=database-password="openshift" \
-  --from-literal=database-root-password="openshift" \
-  --from-literal=database-name=quay-enterprise
-oc create secret generic quay-super-user \
-  --from-literal=superuser-username="mbach" \
-  --from-literal=superuser-password="openshift" \
-  --from-literal=superuser-email="mbach@redhat.com"
-oc create secret generic quay-config-app \
-  --from-literal=config-app-password="openshift"
-oc create secret generic quay-redis-password \
-  --from-literal=password="openshift"
-sleep 5
+# Secret required to pull from quay.io
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: redhat-pull-secret
+  namespace: user$i
+type: kubernetes.io/dockerconfigjson
+data:
+  .dockerconfigjson: ewogICJhdXRocyI6IHsKICAgICJxdWF5LmlvIjogewogICAgICAiYXV0aCI6ICJjbVZrYUdGMEszRjFZWGs2VHpneFYxTklVbE5LVWpFMFZVRmFRa3MxTkVkUlNFcFRNRkF4VmpSRFRGZEJTbFl4V0RKRE5GTkVOMHRQTlRsRFVUbE9NMUpGTVRJMk1USllWVEZJVWc9PSIsCiAgICAgICJlbWFpbCI6ICIiCiAgICB9CiAgfQp9
 
+EOF
+
+oc project user$i
+
+#Create secrets for quay, redis, postgres
+cat <<EOF | oc apply -f -
+# Secret to change default password for super-user
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-superuser
+  namespace: user$i
+type: Opaque
+stringData:
+  superuser-username: quay
+  superuser-password: openshift
+  superuser-email: quay@redhat.com
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-database-credential
+  namespace: user$i
+type: Opaque
+stringData:
+  database-username: quay
+  database-password: openshift
+  database-root-password: openshift
+  database-name: quay-enterprise
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-config-app
+  namespace: user$i
+type: Opaque
+stringData:
+  config-app-password: openshift
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: quay-redis-password
+  namespace: user$i
+type: Opaque
+stringData:
+  password: openshift
+EOF
+#Launch an instance of Quay
 cat <<EOF | oc apply -f -
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: QuayEcosystem
 metadata:
   name: quayecosystem-user$i
+  namespace: user$i
 spec:
   quay:
     enableRepoMirroring: true
     imagePullSecretName: redhat-pull-secret
-    superuserCredentialsSecretName: quay-super-user
+    superuserCredentialsSecretName: quay-superuser
     configSecretName: quay-config-app
+    database:
+      volumeSize: 10Gi
+    registryStorage:
+      persistentVolumeSize: 10Gi
+      persistentVolumeAccessModes:
+        - ReadWriteOnce
   clair:
     enabled: true
     imagePullSecretName: redhat-pull-secret

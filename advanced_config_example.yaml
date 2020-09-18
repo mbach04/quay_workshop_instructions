@@ -1,13 +1,20 @@
 apiVersion: redhatcop.redhat.io/v1alpha1
 kind: QuayEcosystem
 metadata:
-  name: quayecosystem-user18
+  name: quayecosystem-user21
+  namespace: user21
 spec:
   quay:
     enableRepoMirroring: true
     imagePullSecretName: redhat-pull-secret
-    superuserCredentialsSecretName: quay-super-user
+    superuserCredentialsSecretName: quay-superuser
     configSecretName: quay-config-app
+    database:
+      volumeSize: 10Gi
+    registryStorage:
+      persistentVolumeSize: 10Gi
+      persistentVolumeAccessModes:
+        - ReadWriteOnce
   clair:
     enabled: true
     imagePullSecretName: redhat-pull-secret
