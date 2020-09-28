@@ -7,6 +7,7 @@ spec:
   quay:
     enableRepoMirroring: true
     keepConfigDeployment: true
+    superuserCredentialsSecretName: quay-superuser
     externalAccess:
       hostname: quay.apps-crc.testing
       tls:
