@@ -6,15 +6,15 @@ This workshop will guide students through the various features of Quay version 3
 Your instructor should assign you a user number. Several of the lab exercises in this workshop will require you to insert your user number to perform an operation. For example, the lab guide may ask you to enter your username and state `userX` as the example. If you are user number `1`, you would change this value to `user1` instead of `userX`.
 
 ## Student labs outline
-[Lab 1 - Organizations and Repositories](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab1.md)
+[Lab 1 - Organizations and Repositories](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab1.md)
 
-[Lab 2 - Repo mirroring](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab2.md)
+[Lab 2 - Repo mirroring](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab2.md)
 
-[Lab 3 - Inspecting image layers and CVE's](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab3.md)
+[Lab 3 - Inspecting image layers and CVE's](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab3.md)
 
-[Lab 4 - Notifications](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab4.md)
+[Lab 4 - Notifications](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab4.md)
 
-[Lab 5 - Working with images](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab5.md)
+[Lab 5 - Working with images](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab5.md)
 
 ___
 
