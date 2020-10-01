@@ -1,11 +1,41 @@
-# Lab 1 - Organizations
+b 1 - Organizations
+
+## Create Quay Secrets
+
+You will need to create the quay secrets, before we get started.
+
+Run ```install-script``` to create Openshift secrets.
+
+```execute
+./install-script
+```
+
+Please give your email address, desired username, and password.
+
+Please allow up to 5 minutes for all instances of quay to come up. It should look like the following.
+
+![Openshift Console](images/Quay_topology.png)
 
 ## Login to Quay
-From a web browser (Chrome / Firefox), Navigate to the Quay URL provided by your instructor.
-Your username is `user` with your user number appended like so: `user3`. Each user's password is set to `openshift` by default. 
+Once all pods are up, please either click on the `quayecosystem-quay` pod and press open on the top right corner of the pod to open.  
+
+![Openshift Console](images/Quay_pod.png)
+
+
+Or run
+
+
+```execute
+oc get routes
+```
+
+
+Copy and paste `quayecosystem-quay` url into a new tab.
+
+_______________________________________________________________________________________________________________
 
 Once logged in, you'll be presented with the Quay dashboard. Notice a few things here true of a new user:
-![Quay Dashboard](/images/lab1-1.png)
+![Quay Dashboard](images/lab1-1.png)
 
 * Quay presents 3 Links at the top of the page (EXPLORE, REPOSITORIES, and TUTORIAL). The `TUTORIAL` link walks you through the full cycle of pushing an image into your Quay instance. This is great any time you need a quick refresher.
 * You have no `Organizations` created. However, you can create repositories under your username, which acts somewhat like an Organization.
@@ -23,19 +53,19 @@ myquay.com/user2/repo1
 Let's start by creating an Organization.
 * Click - `Create New Organization`
 
-![Quay Dashboard](/images/lab1-1.png)
+![Quay Dashboard](images/lab1-1.png)
 
 * Name this Organization `userXorg`, where `X` is your assigned user number.
 
 
 * Click `Create Organization`
 
-![Quay Dashboard](/images/lab1-3.png)
+![Quay Dashboard](images/lab1-3.png)
 
 
 
 ## Create a Repository
-![Quay Dashboard](/images/lab1-3.png)
+![Quay Dashboard](images/lab1-3.png)
 
 * Click `Create New Repository` in the top right of the UI.
 
@@ -49,7 +79,7 @@ Let's start by creating an Organization.
 
 * Click `Create Public Repository`
 
-![Quay Dashboard](/images/lab1-4.png)
+![Quay Dashboard](images/lab1-4.png)
 
 * Navigate back to the dashboard by clicking the `RED HAT QUAY` icon in the top left of the page.
 * Notice you now have two organizations, `userX` and `userXorg`. Your `userXorg` organization contains one repository named `test`.
@@ -57,5 +87,5 @@ Let's start by creating an Organization.
 
 
 ## Next Lab:
-[Previous](https://github.com/mbach04/quay_workshop_instructions/blob/master/README.md) | [Next](https://github.com/mbach04/quay_workshop_instructions/blob/master/lab2.md)
+[Previous](https://github.com/afouladi7/quay_workshop_instructions/blob/master/README.md) | [Next](https://github.com/afouladi7/quay_workshop_instructions/blob/master/lab2.md)
 
