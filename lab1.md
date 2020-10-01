@@ -14,12 +14,12 @@ Please give your email address, desired username, and password.
 
 Please allow up to 5 minutes for all instances of quay to come up. It should look like the following.
 
-![Openshift Console](images/Quay_topology.png)
+
 
 ## Login to Quay
 Once all pods are up, please either click on the `quayecosystem-quay` pod and press open on the top right corner of the pod to open.  
 
-![Openshift Console](images/Quay_pod.png)
+
 
 
 Or run
